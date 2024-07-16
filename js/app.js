@@ -7,6 +7,7 @@ let bitcoinData;
 let chartInstance = null;
 
 const chartParams = {
+  sevenDays: { labels: [], data: [] },
   oneMonth: { labels: [], data: [] },
   sixMonths: { labels: [], data: [] },
   max: { labels: [], data: [] },
@@ -76,6 +77,8 @@ function drawChart(labels, data) {
 }
 
 function initChartParams() {
+  chartParams.sevenDays.labels = Object.keys(bitcoinData).slice(-7);
+  chartParams.sevenDays.data = Object.values(bitcoinData).slice(-7);
   chartParams.sixMonths.labels = Object.keys(bitcoinData).slice(-185);
   chartParams.sixMonths.data = Object.values(bitcoinData).slice(-185);
   for (let i = 0; i < Object.keys(bitcoinData).length; i += 48) {
@@ -92,6 +95,11 @@ function addButtonEventListener(buttonId, labels, data) {
 }
 
 function initBtnEventlisteners() {
+  addButtonEventListener(
+    'seven-days-btn',
+    chartParams.sevenDays.labels,
+    chartParams.sevenDays.data
+  );
   addButtonEventListener(
     'one-month-btn',
     chartParams.oneMonth.labels,
