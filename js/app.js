@@ -81,7 +81,7 @@ function initChartParams() {
   // chartParams.max.labels = Object.keys(bitcoinData);
   // chartParams.max.data = Object.values(bitcoinData);
   // before max data change
-  for (let i = 0; i < Object.keys(bitcoinData).length; i += 45) {
+  for (let i = 0; i < Object.keys(bitcoinData).length; i += 48) {
     chartParams.max.labels.push(Object.keys(bitcoinData)[i]);
     chartParams.max.data.push(Object.values(bitcoinData)[i]);
   }
