@@ -137,3 +137,5 @@ async function initChart() {
 }
 
 initChart();
+
+// clone
