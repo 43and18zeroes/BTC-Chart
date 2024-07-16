@@ -76,8 +76,8 @@ function drawChart(labels, data) {
 }
 
 function initChartParams() {
-  chartParams.sixMonths.labels = Object.keys(bitcoinData).slice(-183);
-  chartParams.sixMonths.data = Object.values(bitcoinData).slice(-183);
+  chartParams.sixMonths.labels = Object.keys(bitcoinData).slice(-185);
+  chartParams.sixMonths.data = Object.values(bitcoinData).slice(-185);
   // chartParams.max.labels = Object.keys(bitcoinData);
   // chartParams.max.data = Object.values(bitcoinData);
   // before max data change
