@@ -76,11 +76,42 @@ function drawChart(labels, data) {
   }
 }
 
+function testFunction() {
+  let objectLength = 1000;
+
+  let divisor = objectLength / 10;
+
+  let chartLength = objectLength / divisor;
+
+  console.log(chartLength);
+
+  let chartArray = [0];
+  for (let index = divisor; index <= objectLength; index += divisor) {
+    chartArray.push(index);
+    
+  }
+  console.log(chartArray);
+}
+
 function initChartParams() {
   chartParams.sevenDays.labels = Object.keys(bitcoinData).slice(-7);
   chartParams.sevenDays.data = Object.values(bitcoinData).slice(-7);
   chartParams.sixMonths.labels = Object.keys(bitcoinData).slice(-185);
   chartParams.sixMonths.data = Object.values(bitcoinData).slice(-185);
+
+  testFunction();
+
+  // let objectLength = Object.keys(bitcoinData).length;
+  // console.log(objectLength);
+
+  // let divisor = Math.floor(objectLength / 48);
+  // console.log(divisor);
+
+  // let chartLength = objectLength / divisor;
+  // console.log(chartLength);
+
+
+
   for (let i = 0; i < Object.keys(bitcoinData).length; i += 48) {
     chartParams.max.labels.push(Object.keys(bitcoinData)[i]);
     chartParams.max.data.push(Object.values(bitcoinData)[i]);
