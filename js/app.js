@@ -77,20 +77,18 @@ function drawChart(labels, data) {
 }
 
 function testFunction() {
-  let objectLength = 1000;
-
-  let divisor = objectLength / 10;
-
-  let chartLength = objectLength / divisor;
-
-  console.log(chartLength);
-
-  let chartArray = [0];
-  for (let index = divisor; index <= objectLength; index += divisor) {
+  let number = Math.floor(Math.random() * 9000) + 1000;
+  console.log("Ursprüngliche Zahl:", number);
+  
+  let divisor = 10;
+  console.log("Divisor:", divisor);
+  
+  let chartArray = [];
+  for (let index = number; index >= 0; index -= divisor) {
     chartArray.push(index);
-    
   }
-  console.log(chartArray);
+  
+  console.log("Ergebnis-Array:", chartArray);
 }
 
 function initChartParams() {
