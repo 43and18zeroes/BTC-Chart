@@ -20,14 +20,18 @@ body {
   display: flex;
 }
 
-#btn-container div {
+#btn-container button {
+  background-color: rgba(0, 0, 0, 0);
   color: #979da8;
   padding: 2px 16px;
+  border: none;
   border-right: 1px solid #55627a;
   cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
 }
 
-#btn-container div:last-child {
+#btn-container button:last-child {
   border-right: none;
 }
 
