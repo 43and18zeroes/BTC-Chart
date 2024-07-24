@@ -76,48 +76,21 @@ function drawChart(labels, data) {
   }
 }
 
-function testFunction() {
-  let objectLength = 1000;
-  let number = Math.floor(Math.random() * 9000) + 1000;
-  console.log(number);
+// function adjustInterval(interval) {
+//   if (interval < 7) return 1;  // Tagesintervall für sehr kurze Zeiträume
+//   if (interval < 30) return 7; // Wochenintervall für mittlere Zeiträume
+//   return 30; // Monatsintervall für lange Zeiträume
+// }
 
-  let divisor = number / 10;
-  console.log(divisor);
-
-  let chartLength = number / divisor;
-  console.log(chartLength);
-
-  let chartArray = [0];
-  for (let index = divisor; index <= number; index += divisor) {
-    chartArray.push(index);
-  }
-  console.log(chartArray);
-
-  // DeepSeek:
-  // let chartData = [];
-
-  // function addDataPoint(newPoint) {
-  //   chartData.push(newPoint);
-  //   if (chartData.length > 10) {
-  //     chartData.shift(); // Entferne den ältesten Eintrag, wenn mehr als 10 Einträge vorhanden sind
-  //   }
-  // }
-
-  // function getChartDataInSteps() {
-  //   let result = [];
-  //   for (let i = chartData[0]; i <= chartData[chartData.length - 1]; i += 10) {
-  //     result.push(i);
-  //   }
-  //   return result;
-  // }
-
-  // // Beispiel: Füge täglich neue Datenpunkte hinzu
-  // for (let i = 1; i <= 15; i++) {
-  //   addDataPoint(i * 10); // Hier können Sie einen beliebigen Wert als neuen Datenpunkt hinzufügen
-  //   console.log('Aktueller Chart-Daten:', chartData);
-  //   console.log('Chart-Daten in Zehnerschritten:', getChartDataInSteps());
-  // }
-}
+// function testFunction() {
+//   const totalDays = Object.keys(bitcoinData).length;
+//   console.log(totalDays);
+//   const maxDataPoints = 300;
+//   const intervalDays = Math.ceil(totalDays / maxDataPoints);
+//   console.log(intervalDays);
+//   const adjustedInterval = adjustInterval(intervalDays);
+//   console.log(adjustedInterval);
+// }
 
 function initChartParams() {
   chartParams.sevenDays.labels = Object.keys(bitcoinData).slice(-7);
@@ -125,16 +98,7 @@ function initChartParams() {
   chartParams.sixMonths.labels = Object.keys(bitcoinData).slice(-185);
   chartParams.sixMonths.data = Object.values(bitcoinData).slice(-185);
 
-  testFunction();
-
-  // let objectLength = Object.keys(bitcoinData).length;
-  // console.log(objectLength);
-
-  // let divisor = Math.floor(objectLength / 48);
-  // console.log(divisor);
-
-  // let chartLength = objectLength / divisor;
-  // console.log(chartLength);
+  // testFunction();
 
   for (let i = 0; i < Object.keys(bitcoinData).length; i += 48) {
     chartParams.max.labels.push(Object.keys(bitcoinData)[i]);
